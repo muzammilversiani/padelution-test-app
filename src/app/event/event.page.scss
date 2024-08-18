@@ -1,0 +1,42 @@
+//ion-toolbar {
+//  --background: linear-gradient(162deg, rgba(56, 70, 108, .8) 20%, rgba(56, 70, 108, .8) 100%), url('https://docs-demo.ionic.io/assets/madison.jpg') bottom no-repeat;
+//}
+//
+//ion-content .bg{
+//  height: 500px;
+//  --background: #fff url('https://pbs.twimg.com/media/FKqNHRRXwAI5IhJ.jpg:large') no-repeat center center / cover;
+//}
+//
+//ion-toolbar {
+//  --ion-toolbar-background:transparent;
+//}
+//
+//.bgr {
+//  height: 100%;
+//  width: 100%;
+//  top: 0;
+//  position: fixed;
+//  background-size: 100% 100%;
+//  background-repeat: no-repeat;
+//  object-fit: cover;
+//}
+//
+//.page-content {
+//  position: relative;
+//  top: 260px;
+//}
+//
+//ion-content {
+//  --offset-top: 0xp;
+//  position: absolute;
+//}
+
+
+.stickybar {
+  top: calc(var(--ion-safe-area-top) - 2rem);
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}

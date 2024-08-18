@@ -1,0 +1,44 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/chats"></ion-back-button>
+    </ion-buttons>
+    <ion-title [routerLink]="['info']">
+      <div class="flex justify-star items-center">
+        <div class="w-8 h-8">
+          <ion-avatar>
+            <img class="w-8 h-8" alt="{{ chat?.name }}" src="{{ chat?.profile_photo_path ? chat?.profile_photo_path : 'https://ionicframework.com/docs/img/demos/avatar.svg' }}" />
+          </ion-avatar>
+        </div>
+
+        <div class="flex flex-col ml-2 text-left pl-2">
+          <ion-label class="text-sm">{{ chat?.name }}</ion-label>
+          <ion-label color="light" class="text-xs">...</ion-label>
+        </div>
+
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <div *ngFor="let item of messages">
+      <ion-item>
+        <ion-label>
+          <h3>{{ item.content }}</h3>
+          <p>{{ item.updated_at }}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-textarea  [(ngModel)]="newMessage"></ion-textarea>
+    <ion-button slot="end"  (click)="sendMessage()">
+      Send
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

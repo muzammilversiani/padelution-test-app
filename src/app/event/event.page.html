@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/discover/events"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hese event</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar >
+
+      <div>
+        hese eventttii
+      </div>
+    </ion-toolbar>
+
+
+  </ion-header>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <div class="sticky top-0 z-50 mt-2">
+    <ion-segment class="" [ngModel]="selectedTab" (ionChange)="changeTab($event)" [scrollable]="true" value="info" mode="md">
+      <ion-segment-button value="info">
+        Info
+      </ion-segment-button>
+      <ion-segment-button value="participants">
+        Participants
+      </ion-segment-button>
+      <ion-segment-button value="matches">
+        Matches
+      </ion-segment-button>
+      <ion-segment-button value="draws">
+        Draws
+      </ion-segment-button>
+      <ion-segment-button value="timetable">
+        Timetable
+      </ion-segment-button>
+      <ion-segment-button value="results">
+        Results
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+    <div style="min-height:1000px;">
+      <div [ngSwitch]="selectedTab" >
+        <div *ngSwitchCase="'info'">
+          <app-event-info></app-event-info>
+        </div>
+        <div *ngSwitchCase="'participants'">
+          <app-event-participants></app-event-participants>
+        </div>
+      </div>
+    </div>
+</ion-content>
+
+
+<!--<ion-content [fullscreen]="true" >-->
+<!--  <ion-img-->
+<!--    src="https://pbs.twimg.com/media/FbUbyt5XEAAghNM.jpg"-->
+<!--    alt="The Wisconsin State Capitol building in Madison, WI at night"-->
+<!--  ></ion-img>-->
+
+
+
+
+<!--</ion-content>-->
+
+
+

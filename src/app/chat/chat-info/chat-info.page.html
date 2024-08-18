@@ -1,0 +1,35 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/chats"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Chat Info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="flex justify-center p-6">
+      <img class="w-32 h-32 rounded-full" alt="{{ chat?.name }}" src="{{ chat?.profile_photo_path ? chat?.profile_photo_path : 'https://ionicframework.com/docs/img/demos/avatar.svg' }}" />
+  </div>
+  <div class="flex justify-center p-6">
+    <div>{{ 'Participants' }}</div>
+  </div>
+
+
+  <ion-list>
+    <div *ngFor="let participant of chat?.participants">
+      <ion-item >
+        <ion-avatar slot="start">
+          <img alt="{{ participant.name }}" src="{{ participant.profile_photo_path ? participant.profile_photo_path : 'https://ionicframework.com/docs/img/demos/avatar.svg' }}" />
+        </ion-avatar>
+        <ion-label>
+          <h3>{{ participant.firstname }} {{ participant.lastname }}</h3>
+<!--          <p>{{ participant.last_message?.content ?? '' }}</p>-->
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+
