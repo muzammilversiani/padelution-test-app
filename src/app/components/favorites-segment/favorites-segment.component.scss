@@ -1,0 +1,23 @@
+:host ::ng-deep {
+
+    ion-searchbar {
+        --background: var(--ion-color-secondary-400);
+        --border-radius: 2px;
+        --placeholder-color: var(--ion-color-secondary-200);
+        --icon-color: var(--ion-color-secondary-100);
+        --cancel-button-color: var(--ion-color-secondary-100);
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: auto;
+        padding-inline-start: 0 !important;
+        padding-inline-end: 0 !important;
+    
+        .searchbar-input-container {
+            min-height: 44px !important;
+    
+            input {
+                padding-inline-start: 2.5rem !important;
+            }
+        }
+    }
+}

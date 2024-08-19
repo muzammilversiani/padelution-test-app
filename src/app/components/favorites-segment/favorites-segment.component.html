@@ -1,0 +1,74 @@
+<div class="ion-padding">
+  <ion-searchbar clear-icon="close" placeholder="Type to search"></ion-searchbar>
+</div>
+<div class="flex items-center justify-between ion-padding pt-2 pb-0">
+  <div class="h3 text-secondary-50">Events</div>
+</div>
+<div class="ion-padding">
+  <ion-list lines="full" class="p-0">
+    @defer {
+      @for (event of favorites?.events; track event.id; let isFirst = $first) {
+        <app-favorite-item [data]="event" [isFirst]="isFirst"></app-favorite-item>
+      }
+      @empty {
+        <div class="text-secondary-200 body-xs">No events found!</div>
+      }
+    } @placeholder (minimum 1500ms) {
+      <app-skeleton-loader></app-skeleton-loader>
+    }
+  </ion-list>
+</div>
+
+<div class="flex items-center justify-between ion-padding pt-2 pb-0">
+  <div class="h3 text-secondary-50">Rankings</div>
+</div>
+<div class="ion-padding">
+  <ion-list lines="full" class="p-0">
+    @defer {
+      @for (ranking of favorites?.rankings; track ranking.id; let isFirst = $first) {
+        <app-favorite-item [data]="ranking" [isFirst]="isFirst"></app-favorite-item>
+      }
+      @empty {
+        <div class="text-secondary-200 body-xs">No rankings found!</div>
+      }
+    } @placeholder (minimum 1500ms) {
+      <app-skeleton-loader></app-skeleton-loader>
+    }
+  </ion-list>
+</div>
+
+<div class="flex items-center justify-between ion-padding pt-2 pb-0">
+  <div class="h3 text-secondary-50">Leagues</div>
+</div>
+<div class="ion-padding">
+  <ion-list lines="full" class="p-0">
+    @defer {
+      @for (league of favorites?.leagues; track league.id; let isFirst = $first) {
+        <app-favorite-item [data]="league" [isFirst]="isFirst"></app-favorite-item>
+      }
+      @empty {
+        <div class="text-secondary-200 body-xs">No leagues found!</div>
+      }
+    } @placeholder (minimum 1500ms) {
+      <app-skeleton-loader></app-skeleton-loader>
+    }
+  </ion-list>
+</div>
+
+<div class="flex items-center justify-between ion-padding pt-2 pb-0">
+  <div class="h3 text-secondary-50">Players</div>
+</div>
+<div class="ion-padding">
+  <ion-list lines="full" class="p-0">
+    @defer {
+      @for (player of favorites?.players; track player.id; let isFirst = $first) {
+        <app-favorite-item [data]="player" [isFirst]="isFirst"></app-favorite-item>
+      }
+      @empty {
+        <div class="text-secondary-200 body-xs">No players found!</div>
+      }
+    } @placeholder (minimum 1500ms) {
+      <app-skeleton-loader></app-skeleton-loader>
+    }
+  </ion-list>
+</div>

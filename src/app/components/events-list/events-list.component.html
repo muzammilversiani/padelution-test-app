@@ -1,0 +1,9 @@
+<ion-list lines="full" class="p-0">
+  @defer (when !isLoading) {
+    @for (event of events; track event.id; let isLast = $last) {
+      <app-event-item [event]="event" [isLast]="isLast"></app-event-item>
+    }
+  } @placeholder (minimum 2000ms) {
+    <app-skeleton-loader></app-skeleton-loader>
+  }
+</ion-list>

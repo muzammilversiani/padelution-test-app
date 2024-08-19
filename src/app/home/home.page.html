@@ -3,115 +3,41 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-button (click)="openChangeLocationModal()">
-          <span class="fi fi-fi" ></span>
-<!--          <ion-icon slot="icon-only" ios="navigate"></ion-icon>-->
+          <span class="fi fi-fi"></span>
+					<span class="h3 mx-2 text-white">Finland</span>
+					<ion-icon name="chevron-down" color="medium" class="body-xs"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="end">
-        <ion-button id="open-create-menu">
-          <ion-icon slot="icon-only" name="add"></ion-icon>
+        <ion-button id="open-create-menu" size="xs" color="primary" fill="solid">
+          <ion-icon slot="start" name="add"></ion-icon>
+					Create
         </ion-button>
       </ion-buttons>
-      <ion-title>
-        Padelution
-      </ion-title>
     </ion-toolbar>
 
-    <ion-segment value="default" class="ion-padding rounded-none">
-      <ion-segment-button value="default">
-        <ion-label>Overview</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="segment">
-        <ion-label>Favorites</ion-label>
-      </ion-segment-button>
-    </ion-segment>
+		<div class="segment-wrapper">
+			<ion-segment [value]="currentView" (ionChange)="onSegmentChange($event)">
+				<ion-segment-button value="overview" class="h5">
+					<ion-label>Overview</ion-label>
+				</ion-segment-button>
+				<ion-segment-button value="favorites" class="h5">
+					<ion-label>Favorites</ion-label>
+				</ion-segment-button>
+			</ion-segment>
+		</div>
   </ion-header>
 
   <ion-content [fullscreen]="true">
 
-    <ion-list>
-      <ion-list-header>
-        <ion-label>Favorites</ion-label>
-      </ion-list-header>
-      <ion-item>
-        <ion-label>Suomen Padelliitto</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label [routerLink]="['events/oulu']">FPT #1 Oulu</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Summer Games 2024</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Padel House Ry</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Kansalliset Kisat B/C 24.12.2024</ion-label>
-      </ion-item>
-    </ion-list>
-
-    <ion-list-header>
-      <ion-label>Centers</ion-label>
-    </ion-list-header>
-    <swiper-container [slidesPerView]="2.4" [effect]="'slide'" [spaceBetween]="5" class="ion-padding">
-      <swiper-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Padel House</ion-card-title>
-            <ion-card-subtitle>Espoo, Finland</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Padel Uno</ion-card-title>
-            <ion-card-subtitle>Oulu, Finland</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Padel Tampere</ion-card-title>
-            <ion-card-subtitle>Tampere, Finland</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Padel Plaza</ion-card-title>
-            <ion-card-subtitle>Tuusula, Finland</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Padel Club Finland Kilo</ion-card-title>
-            <ion-card-subtitle>Espoo, Finland</ion-card-subtitle>
-          </ion-card-header>
-
-        </ion-card>
-      </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Padel X Turku</ion-card-title>
-            <ion-card-subtitle>Turku, Finland</ion-card-subtitle>
-          </ion-card-header>
-
-        </ion-card>
-      </swiper-slide>
-    </swiper-container>
-    <div class="ion-padding">
-
-      <h1>Team 1 vs Team2</h1>
-      <ion-button id="open-modal" (click)="openModal()">
-        Enter Results
-      </ion-button>
-    </div>
+		@switch (currentView) {
+			@case ('overview') {
+				<app-overview-segment></app-overview-segment>
+			}
+			@case ('favorites') {
+				<app-favorites-segment></app-favorites-segment>
+			}
+		}
 
   </ion-content>
 
@@ -121,6 +47,5 @@
     [buttons]="createMenuButtons"
     (didDismiss)="createMenuResult($event)"
   ></ion-action-sheet>
-
 
 </div>

@@ -25,7 +25,7 @@ $secondary-50: #DCDEE5;
 
 // Define your white and black colors
 $white: #FFFFFF;
-$black: #000000;
+$black: #06090E;
 
 // Override Ionic color variables
 $colors: (
@@ -116,7 +116,7 @@ $secondary-shades: (
 // Dark mode settings
 @media (prefers-color-scheme: dark) {
   body {
-    --ion-background-color: var(--ion-color-secondary-600); // Using the secondary-600 color step as the background
+    --ion-background-color: var(--ion-color-secondary-700) !important; // Using the secondary-600 color step as the background
     --ion-background-color-rgb: #{color-rgb($secondary-700)};
 
     --ion-text-color: #{map-get($colors, light)};
@@ -154,10 +154,6 @@ $secondary-shades: (
     //--ion-color-step-950: #f2f2f2;
   }
 
-}
-
-ion-toolbar {
-  --ion-background-color: var(--ion-color-secondary-600) !important;
 }
 
 

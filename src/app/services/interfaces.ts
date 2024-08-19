@@ -11,6 +11,14 @@ export interface IPage {
   slug: string;
 }
 
+export interface IHost {
+  id: number;
+  name: string;
+  slug: string;
+  city: string;
+  address: string;
+}
+
 export interface IEvent {
   id: number;
   name: string;
@@ -26,7 +34,24 @@ export interface IEvent {
   slug: string;
   start_at_time: string;
   country: ICountry;
-  host?: IPage,
+  host?: IHost;
+}
+
+export interface ISuggestedItem {
+  id: number;
+  name: string;
+  description: string;
+  icon: string;
+}
+
+export interface IFavoriteItem {
+  id: number;
+  type: string; // Can be 'event', 'ranking', 'league', OR 'player'
+  icon: string;
+  player?: IPlayer | null;
+  event?: IEvent | null;
+  league?: ILeague | null;
+  ranking?: IRanking | null;
 }
 
 export interface IMessage {
@@ -60,6 +85,47 @@ export interface IChat {
   unread_messages_count: number;
   created_at: string;
   updated_at: string;
+}
+
+export interface IAdBanner {
+  id: number;
+  url: string;
+}
+
+export interface IMatch {
+  id: number;
+  date: string;
+  court: string;
+  league: ILeague;
+  team1: ITeam;
+  team2: ITeam;
+}
+
+export interface ITeam {
+  id: number;
+  player1: IPlayer;
+  player2: IPlayer;
+}
+
+export interface IPlayer {
+  id: number;
+  name: string;
+  country: ICountry;
+  ranking: number;
+  age?: number;
+}
+
+export interface ILeague {
+  id: number;
+  name: string;
+  type?: string | null;
+  venue?: string | null;
+}
+
+export interface IRanking {
+  id: number;
+  name: string;
+  team: string;
 }
 
 export interface IChatApiSingleResponse<T> {

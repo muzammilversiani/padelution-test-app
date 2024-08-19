@@ -1,0 +1,32 @@
+<ion-item [detail]="false" class="items-start" [ngClass]="{ 'last': isLast }">
+  <div slot="start">
+    <div class="date-box">
+      @if( event?.days == 1 ) {
+        <div class="h4">
+          {{ dates[0] }}.
+        </div>
+      } @else {
+        <div class="font-bold body-xs">{{ dates[0] }}.</div>
+        <div class="font-bold text-sm">-</div>
+        <div class="font-bold body-xs">{{ dates[dates.length-1] }}.</div>
+      }
+    </div>
+  </div>
+  <ion-label class="m-0">
+    <div class="h4 text-primary-500 mb-2">{{ event?.name }}</div>
+    @if( event?.days! > 1 ) {
+      <div class="tags flex items-center mb-2">
+        <div class="tag">MA</div>
+        <div class="tag">MC</div>
+        <div class="tag">MD</div>
+        <div class="tag">NA</div>
+        <div class="tag">NC</div>
+        <div class="tag">ND</div>
+      </div>
+    }
+    <div class="body-xs text-secondary-100 font-normal flex items-center">
+      <img src="./assets/imgs/location.svg" alt="Location" class="mr-1" width="11">
+      {{ event?.host?.name }}, {{ event?.host?.city }}
+    </div>
+  </ion-label>
+</ion-item>

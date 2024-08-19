@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import {BehaviorSubject, from, Observable, of} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {environment} from "../../environments/environment";
-import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
+// import {GenericOAuth2} from "@capacitor-community/generic-oauth2";
 import {NavController} from "@ionic/angular";
 
 @Injectable({

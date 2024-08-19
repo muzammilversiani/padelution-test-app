@@ -1,0 +1,43 @@
+<div class="ion-padding">
+  <swiper-container [slidesPerView]="1" [spaceBetween]="5" [effect]="'slide'" [pagination]="true">
+    @for (slide of slides; track slide.id) {
+      <swiper-slide>
+        <div class="slide-card" [style.background-image]="'url('+slide.image+')'">
+          <div>
+            <img [src]="slide.icon" alt="Icon">
+          </div>
+          <div>
+            <div class="title h2">{{ slide.title }}</div>
+            <div class="desc font-normal body-xs">{{ slide.description }}</div>
+          </div>
+        </div>
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>
+
+<div class="flex items-center justify-between ion-padding pt-2">
+  <div class="h3 text-secondary-50">Upcoming Matches</div>
+  <div class="text-right h5 text-primary-500">See all</div>
+</div>
+<div class="px-1">
+  <app-matches-list></app-matches-list>
+</div>
+
+<div class="ion-padding text-center">
+  <app-ad-banner [banners]="banners"></app-ad-banner>
+</div>
+
+<div class="flex items-center justify-between ion-padding pt-2 pb-0">
+  <div class="h3 text-secondary-50">Upcoming events</div>
+  <div class="text-right h5 text-primary-500">See all</div>
+</div>
+<div class="ion-padding">
+  <div class="h4 text-secondary-200">August 2024</div>
+  <app-events-list></app-events-list>
+</div>
+
+<div class="recommended-section">
+  <div class="h4 text-secondary-50 mb-3">You might like</div>
+  <app-recommended-list></app-recommended-list>
+</div>

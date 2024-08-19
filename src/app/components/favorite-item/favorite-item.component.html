@@ -1,0 +1,41 @@
+<ion-item [detail]="false" class="items-start" [ngClass]="{'first': isFirst}">
+  <div slot="start">
+    @if( data?.type != 'player' ) {
+      <div class="icon-box">
+        <img [src]="data?.icon" alt="Icon" width="22">
+      </div>
+    } @else {
+      <div class="icon-box" [style.background-image]="'url('+data?.icon+')'"></div>
+    }
+  </div>
+  <ion-label class="m-0">
+    @if( data?.type == 'event' ) {
+      <div class="h4 text-primary-500 mb-2">{{ data?.event?.name }}</div>
+      <div class="body-xs text-secondary-100 font-normal flex items-center">
+        {{ data?.event?.start_at }}
+        <img src="./assets/imgs/location.svg" alt="Location" class="mx-1" width="11">
+        {{ data?.event?.host?.name }}, {{ data?.event?.host?.city }}
+      </div>
+    } @else if( data?.type == 'ranking' ) {
+      <div class="h4 text-primary-500 mb-2">{{ data?.ranking?.name }}</div>
+      <div class="body-xs text-secondary-100 font-normal flex items-center">
+        {{ data?.ranking?.team }}
+      </div>
+    } @else if( data?.type == 'league' ) {
+      <div class="h4 text-primary-500 mb-2">{{ data?.league?.name }}</div>
+      <div class="body-xs text-secondary-100 font-normal flex items-center">
+        {{ data?.league?.venue }}
+      </div>
+    } @else if( data?.type == 'player' ) {
+      <div class="h4 text-primary-500 mb-2">{{ data?.player?.name }}</div>
+      <div class="body-xs text-secondary-100 font-normal flex items-center">
+        <span class="{{ data?.player?.country?.code }} mr-2"></span>
+        <span class="font-normal body-xs">{{ data?.player?.country?.name }}</span>
+        <span class="dot mx-2"></span>
+        <span class="font-normal body-xs mr-2">{{ data?.player?.age }}y</span>
+        <img src="./assets/imgs/union_sm.svg" alt="" width="14" class="mr-1">
+        <span class="body-xs font-normal text-secondary-200">{{ data?.player?.ranking }}</span>
+      </div>
+    }
+  </ion-label>
+</ion-item>

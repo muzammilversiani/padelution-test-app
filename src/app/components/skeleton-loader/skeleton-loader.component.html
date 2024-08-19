@@ -1,0 +1,11 @@
+@if( type == 'favorite-item' ) {
+	@for (i of [1,2]; track i) {
+		<ion-item [detail]="false" class="items-start" >
+			<ion-skeleton-text slot="start" [animated]="true" style="border-radius: 2px; height: 48px; width: 48px;"></ion-skeleton-text>
+			<ion-label class="m-0">
+				<ion-skeleton-text [animated]="true" style="width: 60%; height: 15px;" class="mb-2"></ion-skeleton-text>
+				<ion-skeleton-text [animated]="true" style="width: 70%; height: 15px;"></ion-skeleton-text>
+			</ion-label>
+		</ion-item>
+	}
+}

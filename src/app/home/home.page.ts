@@ -13,10 +13,12 @@ import {
   IonToolbar, ModalController
 } from "@ionic/angular/standalone";
 import { addIcons } from 'ionicons';
-import {add, navigate, chevronUpCircle} from "ionicons/icons";
+import {add, navigate, chevronUpCircle, chevronDown} from "ionicons/icons";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {EnterMatchResultsComponent} from "../components/enter-match-results/enter-match-results.component";
-import {ChangeLocationComponent} from "../components/change-location/change-location.component";
+import { EnterMatchResultsComponent } from "../components/enter-match-results/enter-match-results.component";
+import { ChangeLocationComponent } from "../components/change-location/change-location.component";
+import { OverviewSegmentComponent } from '../components/overview-segment/overview-segment.component';
+import { FavoritesSegmentComponent } from '../components/favorites-segment/favorites-segment.component';
 
 
 @Component({
@@ -25,8 +27,31 @@ import {ChangeLocationComponent} from "../components/change-location/change-loca
   styleUrls: ['./home.page.scss'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [ IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonFab, IonFabButton, IonFabList, IonActionSheet, IonHeader, IonToolbar, IonButtons, IonButton, IonLabel, IonIcon, IonTitle, IonContent, IonBackButton
-    , CommonModule, FormsModule, RouterModule]
+  imports: [
+    IonCard, 
+    IonCardContent, 
+    IonCardHeader, 
+    IonCardSubtitle, 
+    IonCardTitle, 
+    IonFab, 
+    IonFabButton, 
+    IonFabList, 
+    IonActionSheet, 
+    IonHeader, 
+    IonToolbar, 
+    IonButtons, 
+    IonButton, 
+    IonLabel, 
+    IonIcon, 
+    IonTitle, 
+    IonContent, 
+    IonBackButton, 
+    CommonModule, 
+    FormsModule, 
+    RouterModule,
+    OverviewSegmentComponent,
+    FavoritesSegmentComponent 
+  ]
 })
 export class HomePage implements OnInit {
   @ViewChild('page') page: ElementRef | undefined;
@@ -64,11 +89,12 @@ export class HomePage implements OnInit {
       },
     },
   ];
+  currentView: string = 'overview';
   constructor(
     private router: Router,
     private modalController: ModalController,
     ) {
-    addIcons({ add, navigate, chevronUpCircle });
+    addIcons({ add, navigate, chevronUpCircle, chevronDown });
   }
 
   ngOnInit() {
@@ -123,6 +149,10 @@ export class HomePage implements OnInit {
         break;
 
     }
+  }
+
+  onSegmentChange(ev: any): void {
+    this.currentView = ev.detail.value;
   }
 
 }

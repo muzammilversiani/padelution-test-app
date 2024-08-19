@@ -42,19 +42,41 @@
 
 
 @import "flags.css";
-ion-segment {
-  --background: var(--ion-color-secondary-600) !important;
-  //height: 40px;
+
+/* Custom Font: Plus Jakarta Sans */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root { 
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  --ion-font-family: 'Plus Jakarta Sans', sans-serif;
+
+  --ion-background-color: var(--ion-color-secondary-700) !important;
 }
 
 ion-segment::-webkit-scrollbar {
   display: none;
 }
 // md version is underline only
-ion-segment-button.ios {
-  --background-checked: var(--ion-color-primary-500);
+// ion-segment-button.ios {
+//   --background-checked: var(--ion-color-primary-500);
 
-}
+// }
 
 ion-header {
   --ion-background-color: var(--ion-color-secondary-600) !important;
@@ -68,5 +90,116 @@ ion-modal {
   --ion-toolbar-background: var(--ion-color-secondary-600) !important;
 }
 
+/* Toolbar */
+ion-toolbar {
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
 
+/* Typography */
+.h1 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: bold;
+}
+.h2 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+}
+.h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.h4 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.h5 {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+}
+.h6 {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: bold;
+}
+.body-xs {
+  font-size: 12px;
+}
+.text-primary-500 {
+  color: var(--ion-color-primary-500);
+}
+.text-secondary-50 {
+  color: var(--ion-color-secondary-50);
+}
+.text-secondary-100 {
+  color: var(--ion-color-secondary-100);
+}
+.text-secondary-200 {
+  color: var(--ion-color-secondary-200);
+}
 
+/* Button */
+ion-button {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  --border-radius: 2px;
+  text-transform: none;
+
+  &.button-sm {
+    font-size: 14px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    min-height: 32px;
+
+    ion-icon {
+      font-size: 14px;
+    }
+  }
+
+  &.button-xs {
+    font-size: 14px;
+    --padding-top: 4px;
+    --padding-bottom: 4px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    min-height: 24px;
+  }
+}
+
+/* Segment */
+.segment-wrapper {
+  padding: 16px 16px;
+}
+ion-segment {
+  --background: var(--ion-color-secondary-500);
+  padding: 5px;
+  border-radius: 4px;
+
+  ion-segment-button {
+    --background-checked: var(--ion-color-primary-500);
+    --color-checked: var(--ion-color-light);
+    --indicator-color: var(--ion-color-primary-500);
+    --indicator-height: 0;
+    text-transform: none;
+    border-radius: 4px;
+    min-height: 32px;
+
+    ion-label {
+      margin: 0;
+    }
+  }
+}
+
+/* Ion List */
+ion-list {
+
+  ion-item {
+    --background: var(--ion-color-secondary-700);
+  }
+}

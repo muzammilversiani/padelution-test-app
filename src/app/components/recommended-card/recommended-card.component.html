@@ -1,0 +1,9 @@
+<div class="recommended-card">
+  <img [src]="item?.icon" alt="Icon" height="24" class="mb-3">
+  <div class="h5 mb-2">{{ item?.name }}</div>
+  <div class="body-xs font-normal text-secondary-200 mb-5">{{ item?.description }}</div>
+  <ion-button expand="block" size="sm" class="pt-2">
+    <ion-icon slot="start" name="star-outline"></ion-icon>
+    Favorite
+  </ion-button>
+</div>

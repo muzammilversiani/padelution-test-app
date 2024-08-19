@@ -1,0 +1,52 @@
+<div class="card-header">
+  <div class="title h5 text-ellipsis overflow-hidden whitespace-nowrap">{{ data?.league?.name }}</div>
+  @if( data?.league?.type && data?.league?.venue ) {
+    <div class="description mt-2 flex items-center">
+      <div class="body-xs font-normal text-secondary-200">{{ data?.league?.type }}</div>
+      <div class="dot mx-2"></div>
+      <div class="body-xs font-normal text-secondary-200">{{ data?.league?.venue }}</div>
+    </div>
+  }
+</div>
+<div class="ion-padding">
+  <div class="flex items-center content-between">
+    <div class="teams flex flex-col basis-2/3">
+      <div class="team1">
+        <div class="player flex items-center mb-2">
+          <span class="{{ data?.team1?.player1?.country?.code }} mr-2"></span>
+          <span class="h6 mr-3">{{ data?.team1?.player1?.name }}</span>
+          <img src="./assets/imgs/union_sm.svg" alt="" width="14" class="mr-1">
+          <span class="body-xs font-normal text-secondary-200">{{ data?.team1?.player1?.ranking }}</span>
+        </div>
+        <div class="player flex items-center">
+          <span class="{{ data?.team1?.player2?.country?.code }} mr-2"></span>
+          <span class="h6 mr-3">{{ data?.team1?.player2?.name }}</span>
+          <img src="./assets/imgs/union_sm.svg" alt="" width="14" class="mr-1">
+          <span class="body-xs font-normal text-secondary-200">{{ data?.team1?.player2?.ranking }}</span>
+        </div>
+      </div>
+      <div class="separator"><span>vs</span></div>
+      <div class="team2">
+        <div class="player flex items-center mb-2">
+          <span class="{{ data?.team2?.player1?.country?.code }} mr-2"></span>
+          <span class="h6 mr-3">{{ data?.team2?.player1?.name }}</span>
+          <img src="./assets/imgs/union_sm.svg" alt="" width="14" class="mr-1">
+          <span class="body-xs font-normal text-secondary-200">{{ data?.team2?.player1?.ranking }}</span>
+        </div>
+        <div class="player flex items-center">
+          <span class="{{ data?.team2?.player2?.country?.code }} mr-2"></span>
+          <span class="h6 mr-3">{{ data?.team2?.player2?.name }}</span>
+          <img src="./assets/imgs/union_sm.svg" alt="" width="14" class="mr-1">
+          <span class="body-xs font-normal text-secondary-200">{{ data?.team2?.player2?.ranking }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="schedule basis-1/3">
+      <div class="text-right">
+        <div class="font-normal text-secondary-200 body-xs mb-1">Scheduled on</div>
+        <div class="h6 mb-1">{{ data?.date }}</div>
+        <div class="h6">{{ data?.court }}</div>
+      </div>
+    </div>
+  </div>
+</div>

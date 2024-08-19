@@ -1,0 +1,6 @@
+<swiper-container [slidesPerView]="2.2" [effect]="'slide'" [spaceBetween]="5">
+  @for (item of suggestedItems; track item.id) {
+    <swiper-slide>
+      <app-recommended-card [item]="item"></app-recommended-card>
+    </swiper-slide>
+  }
