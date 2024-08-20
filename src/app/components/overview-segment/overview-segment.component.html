@@ -1,19 +1,5 @@
 <div class="ion-padding">
-  <swiper-container [slidesPerView]="1" [spaceBetween]="5" [effect]="'slide'" [pagination]="true">
-    @for (slide of slides; track slide.id) {
-      <swiper-slide>
-        <div class="slide-card" [style.background-image]="'url('+slide.image+')'">
-          <div>
-            <img [src]="slide.icon" alt="Icon">
-          </div>
-          <div>
-            <div class="title h2">{{ slide.title }}</div>
-            <div class="desc font-normal body-xs">{{ slide.description }}</div>
-          </div>
-        </div>
-      </swiper-slide>
-    }
-  </swiper-container>
+  <app-home-slides></app-home-slides>
 </div>
 
 <div class="flex items-center justify-between ion-padding pt-2">
@@ -25,7 +11,7 @@
 </div>
 
 <div class="ion-padding text-center">
-  <app-ad-banner [banners]="banners"></app-ad-banner>
+  <app-ad-banner></app-ad-banner>
 </div>
 
 <div class="flex items-center justify-between ion-padding pt-2 pb-0">

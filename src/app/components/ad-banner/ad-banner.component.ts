@@ -10,17 +10,20 @@ import { IAdBanner } from 'src/app/services/interfaces';
 })
 export class AdBannerComponent  implements OnInit {
 
-  @Input({ required: true }) banners: IAdBanner[] = [];
+  banners: IAdBanner[] = [
+    { id: 1, url: 'https://placehold.co/300x250?text=Ad+Banner+1' },
+    { id: 2, url: 'https://placehold.co/300x250?text=Ad+Banner+2' },
+    { id: 3, url: 'https://placehold.co/300x250?text=Ad+Banner+3' },
+  ];
   selectedBanner: IAdBanner | undefined;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.selectedBanner = this.banners[Math.floor(Math.random() * this.banners.length)];
+  }
 
   ngOnChanges() {
-    if( this.banners.length > 0 ) {
-      this.selectedBanner = this.banners[Math.floor(Math.random() * this.banners.length)];
-    }
   }
 
 }

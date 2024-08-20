@@ -1,0 +1,15 @@
+<swiper-container [slidesPerView]="1" [spaceBetween]="5" [effect]="'slide'" [pagination]="true">
+  @for (slide of slides; track slide.id) {
+    <swiper-slide>
+      <div class="slide-card" [style.background-image]="'url('+slide.image+')'">
+        <div>
+          <img [src]="slide.icon" alt="Icon">
+        </div>
+        <div>
+          <div class="title h2">{{ slide.title }}</div>
+          <div class="desc font-normal body-xs">{{ slide.description }}</div>
+        </div>
+      </div>
+    </swiper-slide>
+  }
+</swiper-container>

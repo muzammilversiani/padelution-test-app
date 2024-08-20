@@ -1,45 +1,3 @@
-.slide-card {
-    border-radius: 8px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 200px;
-    padding: 16px 16px 30px 16px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-
-    &::after {
-        content: " ";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color: rgba(17,24,38,.35);
-    }
-
-    div {
-        z-index: 2;
-    }
-
-    img {
-        color: var(--ion-color-primary-500);
-        font-size: 20px;
-    }
-
-    .title {
-        margin-bottom: 10px;
-    }
-
-    .desc {
-        color: var(--ion-color-secondary-50);
-        line-height: 16px;
-    }
-}
-
 .section-header {
     border-radius: 2px;
     padding: 8px 12px;
@@ -50,19 +8,6 @@
         height: 4px;
         border-radius: 50%;
         background-color: var(--ion-color-secondary-300);
-    }
-}
-
-:host ::ng-deep swiper-container {
-    --swiper-pagination-bullet-inactive-color: var(--ion-color-secondary-100);
-    --swiper-pagination-color: var(--ion-color-primary-500);
-    --swiper-pagination-bullet-inactive-opacity: 1;
-    --swiper-pagination-bullet-width: 8px;
-    --swiper-pagination-bullet-height: 4px;
-    --swiper-pagination-bullet-border-radius: 2px;
-
-    .swiper-pagination-bullet-active {
-        width: 16px !important;
     }
 }
 
