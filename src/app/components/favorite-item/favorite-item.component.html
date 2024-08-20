@@ -1,4 +1,4 @@
-<ion-item [detail]="false" class="items-start" [ngClass]="{'first': isFirst}">
+<ion-item [detail]="false" [ngClass]="{'first': isFirst}">
   <div slot="start">
     @if( data?.type != 'player' ) {
       <div class="icon-box">
@@ -38,4 +38,5 @@
       </div>
     }
   </ion-label>
+  <img slot="end" src="./assets/imgs/ic_star-filled.svg" width="24" alt="Icon">
 </ion-item>

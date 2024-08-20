@@ -39,6 +39,11 @@ $colors: (
   secondary-shade: $secondary-600,
   secondary-tint: $secondary-400,
 
+  warning: #F9DC5C,
+  warning-contrast: $black,
+  warning-shade: #dbc251,
+  warning-tint: #fae06c,
+
   light: $white,
   light-contrast: $black,
   light-shade: #E0E0E0,
@@ -87,6 +92,13 @@ $secondary-shades: (
   --ion-color-secondary-contrast-rgb: #{color-rgb(map-get($colors, secondary-contrast))};
   --ion-color-secondary-shade: #{map-get($colors, secondary-shade)};
   --ion-color-secondary-tint: #{map-get($colors, secondary-tint)};
+
+  --ion-color-warning: #{map-get($colors, warning)};
+  --ion-color-warning-rgb: #{color-rgb(map-get($colors, warning))};
+  --ion-color-warning-contrast: #{map-get($colors, warning-contrast)};
+  --ion-color-warning-contrast-rgb: #{color-rgb(map-get($colors, warning-contrast))};
+  --ion-color-warning-shade: #{map-get($colors, warning-shade)};
+  --ion-color-warning-tint: #{map-get($colors, warning-tint)};
 
   --ion-color-light: #{map-get($colors, light)};
   --ion-color-light-rgb: #{color-rgb(map-get($colors, light))};
