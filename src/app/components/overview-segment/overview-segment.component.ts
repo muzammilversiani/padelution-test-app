@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatchCardComponent } from '../match-card/match-card.component';
-import { IAdBanner } from 'src/app/services/interfaces';
 import { AdBannerComponent } from '../ad-banner/ad-banner.component'
 import { EventsListComponent } from '../events-list/events-list.component';
 import { MatchesListComponent } from '../matches-list/matches-list.component';
